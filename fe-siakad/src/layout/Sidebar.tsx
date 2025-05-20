@@ -9,6 +9,7 @@ import {
   MapPin,
   Settings,
   BookUser,
+  BookCheck,
 } from "lucide-react";
 
 const perkuliahan = [
@@ -25,7 +26,10 @@ const lainnya = [
   { label: "Pengaturan Akun", icon: Settings, path: "/pengaturan" },
 ];
 
-const dataMaster = [{ label: "Mahasiswa", icon: BookUser, path: "/mahasiswa" }];
+const dataMaster = [
+  { label: "Mahasiswa", icon: BookUser, path: "/mahasiswa" },
+  { label: "Mata Kuliah", icon: BookCheck, path: "/matakuliah" },
+];
 
 function renderMenu(menu: typeof perkuliahan) {
   return menu.map(({ label, icon: Icon, path }) => (

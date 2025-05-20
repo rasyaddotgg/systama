@@ -29,19 +29,25 @@ export default function DataTable({
           <thead className="bg-gray-100 text-gray-700 uppercase">
             <tr>
               {headers.map((header) => (
-                <th className="px-4 py-3 border">{header}</th>
+                <th className="px-4 py-3 border" key={header}>
+                  {header}
+                </th>
               ))}
             </tr>
           </thead>
           <tbody className="text-gray-800">
-            {pageData.map((data) => renderItem(data))}
-            {pageData.length === 0 && (
+            {pageData.length === 0 ? (
               <tr>
-                <td colSpan={5} className="text-center py-4 text-gray-500">
+                <td
+                  colSpan={headers.length}
+                  className="text-center py-4 text-gray-500"
+                >
                   Tidak ada data {entity}.
                 </td>
               </tr>
-            )}{" "}
+            ) : (
+              pageData.map((data) => renderItem(data))
+            )}
           </tbody>
         </table>
       </div>
