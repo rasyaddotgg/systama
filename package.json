@@ -1,0 +1,19 @@
+{
+  "name": "uts-siakad",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install-fe": "cd fe-siakad && npm install",
+    "install-be": "cd be-siakad && npm install",
+    "install-app": "npm run install-fe && npm run install-be",
+    "start:dev": "concurrently \"cd fe-siakad && npm run dev\" \"cd be-siakad && npm run start:dev\""
+  },
+  "keywords": [],
+  "author": "mochamad.rasyad",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
